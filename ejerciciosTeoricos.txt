@@ -37,3 +37,11 @@ Esto también se evaluaría como 6, ya que succ es el sucesor de pred (el predec
 
 (m) gcd 21 27
 Esto se evaluaría como 3, ya que gcd calcula el máximo común divisor de dos números.
+
+
+9. ¿Que encuentra incorrecto en el siguiente codigo?:
+AllDiferent n m p = (( n /= m ) && ( m /= p))
+Probar esta definici´on con los valores probados en el punto 8)
+
+
+El error es que n puede ser p y eso esta funcion no lo tiene en cuenta.

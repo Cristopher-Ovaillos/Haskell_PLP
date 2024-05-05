@@ -1,13 +1,11 @@
-
-generar :: Int -> IO ()
+generar :: Int -> String
 generar a
-    | a == 0 = return ()
-    | otherwise = do
+    | a == 0 = ""
+    | otherwise = 
         let num1 = a `mod` 10  -- obtengo el digito (entero)
-            num2 = a `div` 10  -- obtengo el resto de digitos (entero)
-        generar num2
-        putStrLn (canNumeros num1 num1)
-       
+            num2 = a `div` 10  -- obtengo el resto de dgitos (entero)
+            st = canNumeros num1 num1
+        in generar num2 ++ st ++ "\n" 
 
 canNumeros :: Int -> Int -> String
 canNumeros a b
@@ -17,4 +15,5 @@ canNumeros a b
 main :: IO ()
 main = do
     let a = 1534
-    generar a
+        resultado = generar a
+    putStrLn resultado
